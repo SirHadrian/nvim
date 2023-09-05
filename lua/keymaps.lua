@@ -24,7 +24,7 @@ keymap("n", "<C-left>", ":vertical resize +2<cr>", opts)
 
 --keymap.set("n", "<leader>e", vim.cmd.Ex)
 keymap("n", "<leader>w", ":w<cr>", opts)
-keymap("n", "<leader>q", ":q<cr>", opts)
+keymap("n", "<leader>q", ":qa<cr>", opts)
 keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
 
 -- Buffer navigation
