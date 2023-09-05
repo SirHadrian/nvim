@@ -79,4 +79,8 @@ return {
         event = "InsertEnter",
         opts = {} -- this is equalent to setup({}) function
     },
+
+    {
+        { 'akinsho/toggleterm.nvim', version = "*", config = true }
+    },
 }
