@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -44,7 +42,7 @@ keymap("n", "<S-h>", ":split<cr>", opts)
 keymap("n", "<S-q>", ":on<cr>", opts)
 
 -- Telescope
-keymap('n', '<leader>ff', ":Telescope find_files<cr>", opts)
+keymap('n', '<leader>f', ":Telescope find_files<cr>", opts)
 keymap('n', '<leader>gf', ":Telescope git_files<cr>", opts)
 keymap('n', '<leader>fg', ":Telescope live_grep<cr>", opts)
 keymap('n', '<leader>fb', ":Telescope buffers<cr>", opts)
