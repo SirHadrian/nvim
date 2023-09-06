@@ -18,3 +18,4 @@ opt.splitright = true         -- Put new windows right of current
 opt.tabstop = 4               -- Number of spaces tabs count for
 opt.termguicolors = true      -- True color support
 opt.shell = "/usr/bin/fish"
+opt.guifont = "CaskaydiaCove Nerd Font Mono:h9"
