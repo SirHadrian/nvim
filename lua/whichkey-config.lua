@@ -80,10 +80,39 @@ local opts = {
 
 local mappings = {
 
-    ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" }, -- Close current file
-    ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
-    ["q"] = { "<cmd>wqall!<CR>", "Quit" },         -- Quit Neovim after saving the file
-    ["w"] = { "<cmd>w!<CR>", "Save" },             -- Save current file
+    ["k"] = { "<cmd>bdelete<cr>", "Kill Buffer" }, -- Close current file
+    ["p"] = { "<cmd>Lazy<cr>", "Plugin Manager" }, -- Invoking plugin manager
+    ["q"] = { "<cmd>qa<cr>", "Quit" },             -- Quit Neovim after saving the file
+    ["w"] = { "<cmd>w<cr>", "Save" },              -- Save current file
+    ["e"] = { "<cmd>Neotree toggle<cr>", "Save" }, -- Save current file
+    ["h"] = { "<cmd>Alpha<cr>", "Save" },          -- Save current file
+
+    -- Telescope
+    f = {
+        name = "File Search",
+        f = { "<cmd>Telescope find_files<cr>", "Find files" },
+        t = { "<cmd>Telescope live_grep<cr>", "Find Text Pattern" },
+        g = { "<cmd>Telescope git_files<cr>", "Search git files" },
+        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
+        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    },
+
+    --Toggle Term
+    t = {
+        name = "Terminal",
+        f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },                   -- Floating Terminal
+        h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" }, -- Horizontal Terminal,
+        v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },     -- Vertical Terminal
+    },
+
+    -- Split view
+    s = {
+        name = "Split",
+        v = { "<cmd>vsplit<cr>", "Vertical split" },  -- Floating Terminal
+        h = { "<cmd>split<cr>", "Horizontal split" }, -- Horizontal Terminal,
+        q = { "<cmd>on<cr>", "Close all splits" },    -- Vertical Terminal
+    },
 
 }
 

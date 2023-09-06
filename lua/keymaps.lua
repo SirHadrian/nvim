@@ -21,9 +21,9 @@ keymap("n", "<C-right>", ":vertical resize -2<cr>", opts)
 keymap("n", "<C-left>", ":vertical resize +2<cr>", opts)
 
 --keymap.set("n", "<leader>e", vim.cmd.Ex)
-keymap("n", "<leader>w", ":w<cr>", opts)
-keymap("n", "<leader>q", ":qa<cr>", opts)
-keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
+--keymap("n", "<leader>w", ":w<cr>", opts)
+--keymap("n", "<leader>q", ":qa<cr>", opts)
+--keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
 
 -- Buffer navigation
 keymap("n", "<A-j>", ":bprevious<cr>", opts)
@@ -33,17 +33,17 @@ keymap("n", "<A-k>", ":bnext<cr>", opts)
 keymap("i", "ii", "<Esc>", opts)
 keymap("i", "jj", "<Esc>", opts)
 
-keymap("n", "<leader>h", ":Alpha<cr>", opts)
-keymap("n", "<leader>c", ":bdelete<cr>", opts)
+--keymap("n", "<leader>h", ":Alpha<cr>", opts)
+--keymap("n", "<leader>c", ":bdelete<cr>", opts)
 
 -- Window split
-keymap("n", "<S-v>", ":vsplit<cr>", opts)
-keymap("n", "<S-h>", ":split<cr>", opts)
-keymap("n", "<S-q>", ":on<cr>", opts)
+--keymap("n", "<S-v>", ":vsplit<cr>", opts)
+--keymap("n", "<S-h>", ":split<cr>", opts)
+--keymap("n", "<S-q>", ":on<cr>", opts)
 
 -- Telescope
-keymap('n', '<leader>f', ":Telescope find_files<cr>", opts)
-keymap('n', '<leader>gf', ":Telescope git_files<cr>", opts)
-keymap('n', '<leader>fg', ":Telescope live_grep<cr>", opts)
-keymap('n', '<leader>fb', ":Telescope buffers<cr>", opts)
-keymap('n', '<leader>fh', ":Telescope help_tags<cr>", opts)
+--keymap('n', '<leader>ff', ":Telescope find_files<cr>", opts)
+--keymap('n', '<leader>gf', ":Telescope git_files<cr>", opts)
+--keymap('n', '<leader>gg', ":Telescope live_grep<cr>", opts)
+--keymap('n', '<leader>fb', ":Telescope buffers<cr>", opts)
+--keymap('n', '<leader>fh', ":Telescope help_tags<cr>", opts)
