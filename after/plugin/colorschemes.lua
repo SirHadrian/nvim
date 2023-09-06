@@ -1,7 +1,7 @@
 require("tokyonight").setup({
     -- your configuration comes here
     -- or leave it empty to use the default settings
-    style = "storm",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+    style = "night",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
     light_style = "day",    -- The theme is used when the background is set to light
     transparent = false,    -- Enable this to disable setting the background color
     terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
@@ -61,7 +61,7 @@ require("gruvbox").setup({
 
 require('rose-pine').setup({
     --- @usage 'auto'|'main'|'moon'|'dawn'
-    variant = 'auto',
+    variant = 'main',
     --- @usage 'main'|'moon'|'dawn'
     dark_variant = 'main',
     bold_vert_split = false,
@@ -115,4 +115,4 @@ require('rose-pine').setup({
 })
 
 -- Set default colorscheme
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme rose-pine]])
