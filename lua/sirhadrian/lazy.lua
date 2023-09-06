@@ -41,6 +41,11 @@ require("lazy").setup({
         lazy = true, -- make sure we load this during startup if it is your main colorscheme
         --priority = 1000
     },
+    {
+        'rose-pine/neovim',
+        lazy = true,
+        name = 'rose-pine'
+    },
 
     {
         -- Which-key Extension
@@ -133,7 +138,10 @@ require("lazy").setup({
         },
         lazy = false,
     },
-
+    -- Git
+    {
+        "airblade/vim-gitgutter",
+    },
     {
         "simrat39/rust-tools.nvim", -- add lsp plugin
         {
