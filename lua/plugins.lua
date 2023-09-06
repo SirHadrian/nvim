@@ -3,10 +3,6 @@ return {
         "folke/tokyonight.nvim",
         lazy = false,    -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
-        config = function()
-            -- load the colorscheme here
-            vim.cmd([[colorscheme tokyonight]])
-        end,
     },
 
     {
@@ -14,16 +10,18 @@ return {
         "folke/which-key.nvim",
         lazy = true,
     },
+
+    -- Bufferline
     {
-        -- Bufferline
-        {
-            'akinsho/bufferline.nvim',
-            version = "*",
-            dependencies = 'nvim-tree/nvim-web-devicons'
-        },
+        'akinsho/bufferline.nvim',
+        lazy = false,
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons'
     },
+
     {
         "nvim-neo-tree/neo-tree.nvim",
+        lazy = false,
         branch = "v3.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -34,12 +32,14 @@ return {
     -- Lualine
     {
         'nvim-lualine/lualine.nvim',
+        lazy = false,
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
     -- Alpha (Dashboard)
     {
         'goolord/alpha-nvim',
+        lazy = false,
         config = function()
             require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
         end
@@ -55,12 +55,17 @@ return {
         }
     },
     {
-        "williamboman/mason.nvim"
+        "williamboman/mason.nvim",
+        lazy = false,
     },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate"
+    },
 
     {
         'VonHeikemen/lsp-zero.nvim',
+        lazy = false,
         branch = 'v2.x',
         dependencies = {
             -- LSP Support
@@ -80,7 +85,12 @@ return {
         opts = {} -- this is equalent to setup({}) function
     },
 
+
     {
-        { 'akinsho/toggleterm.nvim', version = "*", config = true }
+        'akinsho/toggleterm.nvim',
+        lazy = true,
+        version = "*",
+        config = true
     },
+
 }
