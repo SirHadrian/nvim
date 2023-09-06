@@ -1,8 +1,8 @@
 local opt = vim.opt
 
-opt.number = true
-opt.mouse = ""
+opt.number = true -- Line numbers
 opt.relativenumber = true
+opt.mouse = ""    -- Disable mouse
 --opt.guicursor=""
 opt.autoindent = true
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
@@ -18,4 +18,6 @@ opt.splitright = true         -- Put new windows right of current
 opt.tabstop = 4               -- Number of spaces tabs count for
 opt.termguicolors = true      -- True color support
 opt.shell = "/usr/bin/fish"
-opt.guifont = "CaskaydiaCove Nerd Font Mono:h9"
+opt.guifont = "CaskaydiaCove Nerd Font Mono:h8"
+
+vim.g.neovide_scale_factor = 1.0

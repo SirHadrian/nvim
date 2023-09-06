@@ -47,3 +47,6 @@ keymap("i", "jj", "<Esc>", opts)
 --keymap('n', '<leader>gg', ":Telescope live_grep<cr>", opts)
 --keymap('n', '<leader>fb', ":Telescope buffers<cr>", opts)
 --keymap('n', '<leader>fh', ":Telescope help_tags<cr>", opts)
+
+keymap("n", "<C-=>", "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1.25<cr>", opts)
+keymap("n", "<C-->", "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1 / 1.25<cr>", opts)
