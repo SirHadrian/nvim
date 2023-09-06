@@ -13,7 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 require("lazy").setup({
-    -- Themes
     {
         "folke/tokyonight.nvim",
         lazy = false,    -- make sure we load this during startup if it is your main colorscheme
@@ -63,4 +62,7 @@ require("lazy").setup({
         lazy = false,
         config = function()
             require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+        end
+},
+
 })
