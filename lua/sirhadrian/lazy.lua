@@ -13,6 +13,22 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 require("lazy").setup({
+    {
+        "williamboman/mason.nvim",
+        lazy = false,
+        config = function()
+            require("mason").setup()
+        end
+
+    },
+    {
+        'williamboman/mason-lspconfig.nvim',
+        lazy = false,
+        config = function()
+            require("mason-lspconfig").setup()
+        end
+    },
+
     -- Themes
     {
         "folke/tokyonight.nvim",
@@ -74,10 +90,6 @@ require("lazy").setup({
         dependencies = {
             { 'nvim-lua/plenary.nvim' },
         }
-    },
-    {
-        "williamboman/mason.nvim",
-        lazy = false,
     },
     {
         "nvim-treesitter/nvim-treesitter",
