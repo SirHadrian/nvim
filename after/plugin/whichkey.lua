@@ -82,14 +82,14 @@ local mappings = {
 
     ["k"] = { "<cmd>bdelete<cr>", "Kill Buffer" },  -- Close current file
     ["p"] = { "<cmd>Lazy<cr>", "Plugin Manager" },  -- Invoking plugin manager
-    ["q"] = { "<cmd>qa!<cr>", "Quit" },             -- Quit Neovim after saving the file
+    ["q"] = { "<cmd>q!<cr>", "Quit" },              -- Quit Neovim after saving the file
     ["w"] = { "<cmd>w<cr>", "Save" },               -- Save current file
     ["e"] = { "<cmd>Neotree toggle<cr>", "Files" }, -- Toggle file explorer
     ["h"] = { "<cmd>Alpha<cr>", "Dashboard" },      -- Toggle Dashboard
 
     -- Telescope
     f = {
-        name = "File Search",
+        name = "Telescope",
         f = { "<cmd>Telescope find_files<cr>", "Find files" },
         t = { "<cmd>Telescope live_grep<cr>", "Find Text Pattern" },
         g = { "<cmd>Telescope git_files<cr>", "Search git files" },
