@@ -114,6 +114,28 @@ local mappings = {
         q = { "<cmd>on<cr>", "Close all splits" },    -- Vertical Terminal
     },
 
+    l = {
+        name = "lsp",
+        g = {
+            name = "goto",
+            d = { "Go to definition" },
+            t = { "Go to type definition" },
+            i = { "Go to implementation" },
+
+        },
+        d = {
+            name = "Diagnostics",
+            l = { "Telescope diagnostics" },
+            j = { "diagnostics next" },
+            k = { "Telescope previous" },
+
+        },
+        a = { "Code actions" },
+        h = { "Signature help" },
+        r = { "Rename" },
+        c = { "Count references" },
+    },
+
 }
 
 which_key.setup(setup)
