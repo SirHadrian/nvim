@@ -19,5 +19,6 @@ opt.tabstop = 4               -- Number of spaces tabs count for
 opt.termguicolors = true      -- True color support
 opt.shell = "/usr/bin/fish"
 opt.guifont = "CaskaydiaCove Nerd Font Mono:h9"
+opt.scrolloff = 8
 
 vim.g.neovide_scale_factor = 1.0
