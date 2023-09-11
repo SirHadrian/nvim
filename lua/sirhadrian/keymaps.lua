@@ -39,12 +39,6 @@ keymap("i", "jj", "<Esc>", opts)
 -- keymap("i", "C-j", "<Down>", opts)
 -- keymap("i", "C-k", "<Up>", opts)
 
--- It works only like this fore some reason
-vim.cmd("inoremap <C-l> <Right>")
-vim.cmd("inoremap <C-h> <Left>")
-vim.cmd("inoremap <C-j> <Down>")
-vim.cmd("inoremap <C-k> <Up>")
-
 --keymap("n", "<leader>h", ":Alpha<cr>", opts)
 --keymap("n", "<leader>c", ":bdelete<cr>", opts)
 
