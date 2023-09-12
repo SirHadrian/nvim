@@ -15,19 +15,19 @@ keymap("n", "<C-j>", "<C-w>j", opts) -- down window
 keymap("n", "<C-l>", "<C-w>l", opts) -- right window
 
 -- Resize with arrows when using multiple windows
-keymap("n", "<C-Up>", ":resize -2<cr>", opts)
-keymap("n", "<C-down>", ":resize +2<cr>", opts)
-keymap("n", "<C-right>", ":vertical resize -2<cr>", opts)
-keymap("n", "<C-left>", ":vertical resize +2<cr>", opts)
+keymap("n", "<C-Up>", "<cmd>resize -2<cr>", opts)
+keymap("n", "<C-down>", "<cmd>resize +2<cr>", opts)
+keymap("n", "<C-right>", "<cmd>vertical resize -2<cr>", opts)
+keymap("n", "<C-left>", "<cmd>vertical resize +2<cr>", opts)
 
 --keymap.set("n", "<leader>e", vim.cmd.Ex)
---keymap("n", "<leader>w", ":w<cr>", opts)
---keymap("n", "<leader>q", ":qa<cr>", opts)
---keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
+--keymap("n", "<leader>w", "<cmd>w<cr>", opts)
+--keymap("n", "<leader>q", "<cmd>qa<cr>", opts)
+--keymap("n", "<leader>e", "<cmd>Neotree toggle<cr>", opts)
 
 -- Buffer navigation
-keymap("n", "<A-j>", ":bprevious<cr>", opts)
-keymap("n", "<A-k>", ":bnext<cr>", opts)
+keymap("n", "<A-j>", "<cmd>bprevious<cr>", opts)
+keymap("n", "<A-k>", "<cmd>bnext<cr>", opts)
 
 -- Exit insert mode
 keymap("i", "ii", "<Esc>", opts)
@@ -38,6 +38,19 @@ keymap("i", "jj", "<Esc>", opts)
 -- keymap("i", "C-h", "<Left>", opts)
 -- keymap("i", "C-j", "<Down>", opts)
 -- keymap("i", "C-k", "<Up>", opts)
+
+-- Move lines up and down
+-- Normal mode
+keymap("n", "<C-j>", "<cmd>m +1<cr>", opts)
+keymap("n", "<C-k>", "<cmd>m -2<cr>", opts)
+-- Visual mode
+keymap("v", "<C-j>", "<cmd>m '>+1<cr>gv=gv", opts)
+keymap("v", "<C-k>", "<cmd>m '<-2<cr>gv=gv", opts)
+keymap("v", "<C-h>", "<gv", opts)
+keymap("v", "<C-l>", ">gv", opts)
+
+-- keymap("v", "<C-j>", "<cmd>m +1<cr>", opts)
+-- keymap("v", "<C-k>", "<cmd>m -2<cr>", opts)
 
 --keymap("n", "<leader>h", ":Alpha<cr>", opts)
 --keymap("n", "<leader>c", ":bdelete<cr>", opts)
