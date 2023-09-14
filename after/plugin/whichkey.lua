@@ -95,7 +95,8 @@ local mappings = {
         g = { "<cmd>Telescope git_files<cr>", "Search git files" },
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
-        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+        k = { "<cmd>Telescope keymaps<cr>", "Buffers" },
+        b = { "<cmd>Telescope buffers<cr>", "Keymaps" },
     },
 
     --Toggle Term
