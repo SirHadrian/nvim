@@ -87,6 +87,12 @@ local mappings = {
     ["e"] = { "<cmd>Neotree toggle<cr>", "Files" }, -- Toggle file explorer
     ["h"] = { "<cmd>Alpha<cr>", "Dashboard" },      -- Toggle Dashboard
 
+    -- Buffers
+    b = {
+        name = "Buffers",
+        a = { "<cmd>%bd|e#<cr>", "Kill Other buffers" }, -- Close all buffers except this one
+    },
+
     -- Telescope
     f = {
         name = "Telescope",
