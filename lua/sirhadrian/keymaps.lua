@@ -39,10 +39,10 @@ keymap("i", "jj", "<Esc>", opts)
 -- keymap("i", "C-j", "<Down>", opts)
 -- keymap("i", "C-k", "<Up>", opts)
 
--- Move lines up and down
 -- Normal mode
-keymap("n", "<C-j>", "<cmd>m +1<cr>", opts)
-keymap("n", "<C-k>", "<cmd>m -2<cr>", opts)
+-- Move lines up and down
+keymap("n", "<C-[>", "<cmd>m +1<cr>", opts)
+keymap("n", "<C-]>", "<cmd>m -2<cr>", opts)
 -- Visual mode
 keymap("v", "<C-j>", "<cmd>m '>+1<cr>gv=gv", opts)
 keymap("v", "<C-k>", "<cmd>m '<-2<cr>gv=gv", opts)
