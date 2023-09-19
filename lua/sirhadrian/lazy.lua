@@ -142,6 +142,7 @@ require("lazy").setup({
     {
         "airblade/vim-gitgutter",
     },
+
     {
         "simrat39/rust-tools.nvim", -- add lsp plugin
         {
@@ -150,5 +151,10 @@ require("lazy").setup({
                 ensure_installed = { "rust_analyzer" },
             },
         },
+    },
+
+    {
+        "ggandor/leap.nvim",
+        lazy = false,
     },
 })
