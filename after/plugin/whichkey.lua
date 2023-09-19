@@ -80,12 +80,13 @@ local opts = {
 
 local mappings = {
 
-    ["k"] = { "<cmd>bdelete<cr>", "Kill Buffer" },  -- Close current file
-    ["p"] = { "<cmd>Lazy<cr>", "Plugin Manager" },  -- Invoking plugin manager
-    ["q"] = { "<cmd>q!<cr>", "Quit" },              -- Quit Neovim after saving the file
-    ["w"] = { "<cmd>w<cr>", "Save" },               -- Save current file
-    ["e"] = { "<cmd>Neotree toggle<cr>", "Files" }, -- Toggle file explorer
-    ["h"] = { "<cmd>Alpha<cr>", "Dashboard" },      -- Toggle Dashboard
+    ["k"] = { "<cmd>bdelete<cr>", "Kill Buffer" },     -- Close current file
+    ["p"] = { "<cmd>Lazy<cr>", "Plugin Manager" },     -- Invoking plugin manager
+    ["q"] = { "<cmd>q!<cr>", "Quit" },                 -- Quit Neovim after saving the file
+    ["w"] = { "<cmd>w<cr>", "Save" },                  -- Save current file
+    ["e"] = { "<cmd>Neotree toggle<cr>", "Files" },    -- Toggle file explorer
+    ["h"] = { "<cmd>Alpha<cr>", "Dashboard" },         -- Toggle Dashboard
+    ["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree" }, -- Toggle UndoTree
 
     -- Buffers
     b = {

@@ -71,6 +71,7 @@ require("lazy").setup({
             "MunifTanjim/nui.nvim",
         }
     },
+
     -- Lualine
     {
         'nvim-lualine/lualine.nvim',
@@ -96,6 +97,7 @@ require("lazy").setup({
             { 'nvim-lua/plenary.nvim' },
         }
     },
+
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
@@ -117,6 +119,7 @@ require("lazy").setup({
             { 'L3MON4D3/LuaSnip' },     -- Required
         }
     },
+
     {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
@@ -138,6 +141,7 @@ require("lazy").setup({
         },
         lazy = false,
     },
+
     -- Git
     {
         "airblade/vim-gitgutter",
@@ -155,6 +159,11 @@ require("lazy").setup({
 
     {
         "ggandor/leap.nvim",
+        lazy = false,
+    },
+
+    {
+        "mbbill/undotree",
         lazy = false,
     },
 })
