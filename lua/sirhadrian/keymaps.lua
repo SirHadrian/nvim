@@ -32,6 +32,7 @@ keymap("n", "<A-k>", "<cmd>bnext<cr>", opts)
 -- Exit insert mode
 keymap("i", "ii", "<Esc>", opts)
 keymap("i", "jj", "<Esc>", opts)
+keymap("i", "kj", "<Esc>", opts)
 
 -- Navigate insert mode
 -- keymap("i", "C-l", "<Right>", opts)
@@ -41,13 +42,13 @@ keymap("i", "jj", "<Esc>", opts)
 
 -- Normal mode
 -- Move lines up and down
-keymap("n", "<C-[>", "<cmd>m +1<cr>", opts)
-keymap("n", "<C-]>", "<cmd>m -2<cr>", opts)
--- Visual mode
-keymap("v", "<C-[>", "<cmd>m '>+1<cr>gv=gv", opts)
-keymap("v", "<C-]>", "<cmd>m '<-2<cr>gv=gv", opts)
-keymap("v", "<C-,>", "<gv", opts)
-keymap("v", "<C-.>", ">gv", opts)
+-- keymap("n", "<C-[>", "<cmd>m .+1<cr>==", opts)
+-- keymap("n", "<C-]>", "<cmd>m .-2<cr>==", opts)
+-- -- Visual mode
+-- keymap("v", "<C-[>", "<cmd>m '>+1<cr>gv=gv", opts)
+-- keymap("v", "<C-]>", "<cmd>m '<-2<cr>gv=gv", opts)
+-- keymap("v", "<C-,>", "<gv", opts)
+-- keymap("v", "<C-.>", ">gv", opts)
 
 -- keymap("v", "<C-j>", "<cmd>m +1<cr>", opts)
 -- keymap("v", "<C-k>", "<cmd>m -2<cr>", opts)
