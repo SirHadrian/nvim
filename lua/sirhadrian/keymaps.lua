@@ -33,6 +33,7 @@ keymap("n", "<A-k>", "<cmd>bnext<cr>", opts)
 keymap("i", "ii", "<Esc>", opts)
 keymap("i", "jj", "<Esc>", opts)
 keymap("i", "kj", "<Esc>", opts)
+keymap("i", "jk", "<Esc>", opts)
 
 -- Navigate insert mode
 -- keymap("i", "C-l", "<Right>", opts)
