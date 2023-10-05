@@ -30,7 +30,6 @@ keymap("n", "<A-j>", "<cmd>bprevious<cr>", opts)
 keymap("n", "<A-k>", "<cmd>bnext<cr>", opts)
 
 -- Exit insert mode
-keymap("i", "ii", "<Esc>", opts)
 keymap("i", "jj", "<Esc>", opts)
 keymap("i", "kj", "<Esc>", opts)
 keymap("i", "jk", "<Esc>", opts)
