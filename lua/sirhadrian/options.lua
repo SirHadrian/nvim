@@ -20,6 +20,6 @@ opt.termguicolors = true      -- True color support
 opt.shell = "/usr/bin/fish"
 opt.guifont = "CaskaydiaCove Nerd Font Mono:h9"
 opt.scrolloff = 10
-opt.hidden = false
+opt.hidden = true
 
 vim.g.neovide_scale_factor = 1.0
