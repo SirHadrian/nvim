@@ -4,6 +4,7 @@ lsp.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
   lsp.default_keymaps({ buffer = bufnr })
+
   -- Format on save
   -- lsp.async_autoformat(client, bufnr)
 
@@ -30,7 +31,6 @@ lsp.ensure_installed({
   'lua_ls',
   'clangd',
   'hls',
-
 })
 
 -- Fix Undefined global 'vim'
