@@ -21,5 +21,7 @@ opt.shell = "/usr/bin/fish"
 opt.guifont = "CaskaydiaCove Nerd Font Mono:h9"
 opt.scrolloff = 10
 opt.hidden = true
+opt.cino="t0" -- do not indent c function types
+opt.colorcolumn=80 -- visual delimitator
 
 vim.g.neovide_scale_factor = 1.0
