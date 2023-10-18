@@ -115,4 +115,4 @@ require('rose-pine').setup({
 })
 
 -- Set default colorscheme
-vim.cmd([[colorscheme rose-pine]])
+vim.cmd([[colorscheme tokyonight-night]])
