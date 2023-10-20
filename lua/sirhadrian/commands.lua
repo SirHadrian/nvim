@@ -6,4 +6,3 @@ vim.cmd("inoremap <C-k> <Up>")
 
 -- Visual delimiter
 vim.cmd("set colorcolumn=80")
-vim.cmd("highlight ColorColumn ctermbg=grey guibg=grey")
