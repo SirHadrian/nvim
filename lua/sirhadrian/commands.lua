@@ -4,6 +4,9 @@ vim.cmd("inoremap <C-h> <Left>")
 vim.cmd("inoremap <C-j> <Down>")
 vim.cmd("inoremap <C-k> <Up>")
 
+vim.cmd("nnoremap Q q")
+vim.cmd("nnoremap q <Nop>")
+
 -- Visual delimiter
 vim.cmd("set colorcolumn=80")
 
