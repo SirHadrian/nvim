@@ -84,7 +84,8 @@ local mappings = {
     ["p"] = { "<cmd>Lazy<cr>", "Plugin Manager" },     -- Invoking plugin manager
     ["q"] = { "<cmd>qa!<cr>", "Quit" },                -- Quit Neovim after saving the file
     ["w"] = { "<cmd>w<cr>", "Save" },                  -- Save current file
-    ["e"] = { "<cmd>Neotree toggle<cr>", "Files" },    -- Toggle file explorer
+    -- ["e"] = { "<cmd>Neotree toggle<cr>", "Files" },    -- Toggle file explorer
+    ["e"] = { "<cmd>Ex<cr>", "Files" },    -- Toggle file explorer
     ["h"] = { "<cmd>Alpha<cr>", "Dashboard" },         -- Toggle Dashboard
     ["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree" }, -- Toggle UndoTree
 

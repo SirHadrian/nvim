@@ -56,7 +56,7 @@ require("gruvbox").setup({
   palette_overrides = {},
   overrides = {},
   dim_inactive = false,
-  transparent_mode = false,
+  transparent_mode = true,
 })
 
 require('rose-pine').setup({
@@ -115,4 +115,4 @@ require('rose-pine').setup({
 })
 
 -- Set default colorscheme
-vim.cmd([[colorscheme tokyonight-night]])
+vim.cmd([[colorscheme gruvbox]])

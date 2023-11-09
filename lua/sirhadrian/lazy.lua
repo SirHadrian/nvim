@@ -66,6 +66,7 @@ require("lazy").setup({
   {
     "nvim-neo-tree/neo-tree.nvim",
     lazy = false,
+    enabled = false,
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
