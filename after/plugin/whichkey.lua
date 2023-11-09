@@ -88,6 +88,7 @@ local mappings = {
     ["e"] = { "<cmd>Ex<cr>", "Files" },    -- Toggle file explorer
     ["h"] = { "<cmd>Alpha<cr>", "Dashboard" },         -- Toggle Dashboard
     ["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree" }, -- Toggle UndoTree
+    ["o"] = { "<cmd>lua Transparent()<cr>", "Transparency" }, -- Toggle UndoTree
 
     -- Buffers
     b = {
