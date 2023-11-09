@@ -6,3 +6,10 @@ vim.cmd("inoremap <C-k> <Up>")
 
 -- Visual delimiter
 vim.cmd("set colorcolumn=80")
+
+function Transparent()
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+end
+Transparent()
