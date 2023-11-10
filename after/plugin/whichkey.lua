@@ -93,7 +93,10 @@ local mappings = {
     -- Buffers
     b = {
         name = "Buffers",
-        a = { "<cmd>%bd|e#<cr>", "Kill Other buffers" }, -- Close all buffers except this one
+        l = { "List all buffers" },
+        a = { "Kill Other buffers" }, -- Close all buffers except this one
+        j = { "Next buffer" },
+        k = { "Previous buffer" },
     },
 
     -- Telescope

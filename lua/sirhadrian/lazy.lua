@@ -52,7 +52,7 @@ require("lazy").setup({
   {
     -- Which-key Extension
     "folke/which-key.nvim",
-    lazy = true,
+    lazy = false,
   },
 
   -- Bufferline
