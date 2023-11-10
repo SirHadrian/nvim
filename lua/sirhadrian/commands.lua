@@ -6,6 +6,7 @@ vim.cmd("inoremap <C-k> <Up>")
 
 vim.cmd("nnoremap Q q")
 vim.cmd("nnoremap q <Nop>")
+vim.cmd("nnoremap <Leader>b :ls<CR>:b<Space>")
 
 -- Visual delimiter
 vim.cmd("set colorcolumn=80")
