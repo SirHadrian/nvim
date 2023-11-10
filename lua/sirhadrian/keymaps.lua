@@ -47,8 +47,8 @@ keymap("i", "kk", "<Esc>", opts)
 -- keymap("n", "<C-]>", "<cmd>m .-2<cr>==", opts)
 
 -- -- Visual mode
-keymap("v", "<C-[>", "<cmd>m '>+1<cr>gv=gv", opts)
-keymap("v", "<C-]>", "<cmd>m '<-2<cr>gv=gv", opts)
+-- keymap("v", "<C-[>", "<cmd>m '>+1<cr>gv=gv", opts)
+-- keymap("v", "<C-]>", "<cmd>m '<-2<cr>gv=gv", opts)
 
 -- Keep cursor in the middle
 keymap("n", "<C-d>", "<C-d>zz", opts)
