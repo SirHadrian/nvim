@@ -95,8 +95,8 @@ local mappings = {
         name = "Buffers",
         l = { "List all buffers" },
         a = { "Kill Other buffers" }, -- Close all buffers except this one
-        j = { "Next buffer" },
-        k = { "Previous buffer" },
+        n = { "Next buffer" },
+        p = { "Previous buffer" },
     },
 
     -- Telescope
