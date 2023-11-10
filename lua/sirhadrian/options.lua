@@ -25,5 +25,8 @@ opt.cino="t0" -- do not indent c function types
 opt.foldmethod = "indent"
 opt.foldenable = false -- disable folds when buffer is opened
 opt.pumheight = 20 -- max number of items to show in popup menu
+opt.hlsearch = false
+opt.incsearch = true
+opt.updatetime = 50
 
 vim.g.neovide_scale_factor = 1.0

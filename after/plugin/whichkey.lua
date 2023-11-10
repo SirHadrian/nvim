@@ -90,6 +90,7 @@ local mappings = {
     ["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree" }, -- Toggle UndoTree
     ["o"] = { "<cmd>lua Transparent()<cr>", "Transparency" }, -- Toggle UndoTree
     ["t"] = { "Toggle Term" }, -- Toggle Term
+    ["r"] = { "Replace current word" },
 
     -- Buffers
     b = {

@@ -25,8 +25,6 @@ keymap("n", "<C-left>", "<cmd>vertical resize +2<cr>", opts)
 --keymap("n", "<leader>q", "<cmd>qa<cr>", opts)
 --keymap("n", "<leader>e", "<cmd>Neotree toggle<cr>", opts)
 
-keymap("n", "tr", "<cmd>term<cr>i", opts)
-
 -- Buffer navigation
 -- keymap("n", "bv", "<cmd>bprevious<cr>", opts)
 -- keymap("n", "bn", "<cmd>bnext<cr>", opts)
@@ -47,9 +45,22 @@ keymap("i", "kk", "<Esc>", opts)
 -- Move lines up and down
 -- keymap("n", "<C-[>", "<cmd>m .+1<cr>==", opts)
 -- keymap("n", "<C-]>", "<cmd>m .-2<cr>==", opts)
+
 -- -- Visual mode
--- keymap("v", "<C-[>", "<cmd>m '>+1<cr>gv=gv", opts)
--- keymap("v", "<C-]>", "<cmd>m '<-2<cr>gv=gv", opts)
+keymap("v", "<C-[>", "<cmd>m '>+1<cr>gv=gv", opts)
+keymap("v", "<C-]>", "<cmd>m '<-2<cr>gv=gv", opts)
+
+-- Keep cursor in the middle
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
+-- Keep search terms in the middle
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+
+-- Replace current word in file
+keymap("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+
 -- keymap("v", "<C-,>", "<gv", opts)
 -- keymap("v", "<C-.>", ">gv", opts)
 
