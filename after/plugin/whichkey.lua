@@ -89,12 +89,13 @@ local mappings = {
     ["h"] = { "<cmd>Alpha<cr>", "Dashboard" },         -- Toggle Dashboard
     ["u"] = { "<cmd>UndotreeToggle<cr>", "UndoTree" }, -- Toggle UndoTree
     ["o"] = { "<cmd>lua Transparent()<cr>", "Transparency" }, -- Toggle UndoTree
+    ["t"] = { "Toggle Term" }, -- Toggle Term
 
     -- Buffers
     b = {
         name = "Buffers",
         l = { "List all buffers" },
-        a = { "Kill Other buffers" }, -- Close all buffers except this one
+        k = { "Kill Other buffers" }, -- Close all buffers except this one
         n = { "Next buffer" },
         p = { "Previous buffer" },
     },
@@ -112,12 +113,12 @@ local mappings = {
     },
 
     --Toggle Term
-    t = {
-        name = "Terminal",
-        f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },                   -- Floating Terminal
-        h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" }, -- Horizontal Terminal,
-        v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },     -- Vertical Terminal
-    },
+    -- t = {
+    --     name = "Terminal",
+    --     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },                   -- Floating Terminal
+    --     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" }, -- Horizontal Terminal,
+    --     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },     -- Vertical Terminal
+    -- },
 
     -- Split view
     s = {

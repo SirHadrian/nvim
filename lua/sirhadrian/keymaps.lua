@@ -25,8 +25,10 @@ keymap("n", "<C-left>", "<cmd>vertical resize +2<cr>", opts)
 --keymap("n", "<leader>q", "<cmd>qa<cr>", opts)
 --keymap("n", "<leader>e", "<cmd>Neotree toggle<cr>", opts)
 
+keymap("n", "tr", "<cmd>term<cr>i", opts)
+
 -- Buffer navigation
-keymap("n", "bp", "<cmd>bprevious<cr>", opts)
+keymap("n", "bv", "<cmd>bprevious<cr>", opts)
 keymap("n", "bn", "<cmd>bnext<cr>", opts)
 
 -- Exit insert mode
