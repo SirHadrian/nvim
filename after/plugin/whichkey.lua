@@ -91,6 +91,7 @@ local mappings = {
     ["o"] = { "<cmd>lua Transparent()<cr>", "Transparency" }, -- Toggle UndoTree
     ["t"] = { "Toggle Term" }, -- Toggle Term
     ["r"] = { "Replace current word" },
+    ["a"] = { "Open tags navigator" },
 
     -- Buffers
     b = {
