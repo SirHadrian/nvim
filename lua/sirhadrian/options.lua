@@ -28,5 +28,6 @@ opt.pumheight = 20 -- max number of items to show in popup menu
 opt.hlsearch = false
 opt.incsearch = true
 opt.updatetime = 50
+opt.ignorecase= true
 
 vim.g.neovide_scale_factor = 1.0
