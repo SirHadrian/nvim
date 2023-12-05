@@ -26,11 +26,11 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.ensure_installed({
-  'tsserver',
+  -- 'tsserver',
   'rust_analyzer',
   'lua_ls',
-  'clangd',
-  'hls',
+  -- 'clangd',
+  -- 'hls',
 })
 
 -- Fix Undefined global 'vim'

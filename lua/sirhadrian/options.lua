@@ -30,4 +30,5 @@ opt.incsearch = true
 opt.updatetime = 50
 opt.ignorecase= true
 
+vim.g.neovide_transparency = 0.0
 vim.g.neovide_scale_factor = 1.0
