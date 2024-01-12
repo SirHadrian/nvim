@@ -19,7 +19,6 @@ opt.tabstop = 2               -- Number of spaces tabs count for
 opt.shiftwidth = 2            -- Size of an indent
 opt.expandtab = true          -- Use spaces instead of tabs
 opt.termguicolors = true      -- True color support
-opt.shell = "/usr/bin/fish"
 opt.guifont = "CaskaydiaCove Nerd Font:h9"
 -- opt.guifont = "CaskaydiaCove Nerd Font Mono:h9"
 opt.scrolloff = 10
@@ -35,6 +34,7 @@ opt.updatetime = 50
 opt.encoding = "utf-8"
 opt.spell = true
 opt.shell = "/usr/bin/fish"
+opt.undofile = true
 
 vim.g.neovide_transparency = 0.0
 vim.g.neovide_scale_factor = 1.0
