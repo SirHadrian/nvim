@@ -168,6 +168,7 @@ require("lazy").setup({
   {
     "mbbill/undotree",
     lazy = false,
+    enabled = false,
   },
 
   {
