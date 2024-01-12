@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+opt.backspace = "indent,eol,start"
+opt.history = 1000
 opt.number = true -- Line numbers
 opt.relativenumber = true
 opt.mouse = ""    -- Disable mouse
@@ -28,8 +30,11 @@ opt.foldenable = false -- disable folds when buffer is opened
 opt.pumheight = 20 -- max number of items to show in popup menu
 opt.hlsearch = false
 opt.incsearch = true
-opt.updatetime = 50
 opt.ignorecase= true
+opt.updatetime = 50
+opt.encoding = "utf-8"
+opt.spell = true
+opt.shell = "/usr/bin/fish"
 
 vim.g.neovide_transparency = 0.0
 vim.g.neovide_scale_factor = 1.0
