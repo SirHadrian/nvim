@@ -45,8 +45,8 @@ keymap("i", "kk", "<Esc>", opts)
 
 -- Normal mode
 -- Move lines up and down
--- keymap("n", "<C-[>", "<cmd>m .+1<cr>==", opts)
--- keymap("n", "<C-]>", "<cmd>m .-2<cr>==", opts)
+keymap("n", "<C-[>", "<cmd>m .+1<cr>==", opts)
+keymap("n", "<C-]>", "<cmd>m .-2<cr>==", opts)
 
 -- -- Visual mode
 -- keymap("v", "<C-[>", "<cmd>m '>+1<cr>gv=gv", opts)
