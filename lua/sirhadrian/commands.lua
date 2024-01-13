@@ -1,8 +1,13 @@
 -- It works only like this for some reason
-vim.cmd("inoremap <C-l> <Right>")
 vim.cmd("inoremap <C-h> <Left>")
 vim.cmd("inoremap <C-j> <Down>")
 vim.cmd("inoremap <C-k> <Up>")
+vim.cmd("inoremap <C-l> <Right>")
+
+-- vim.cmd("nnoremap <C-h> <C-w><C-h>")
+-- vim.cmd("nnoremap <C-j> <C-w><C-j>")
+-- vim.cmd("nnoremap <C-k> <C-w><C-k>")
+-- vim.cmd("nnoremap <C-l> <C-w><C-l>")
 
 vim.cmd("nnoremap Q q")
 vim.cmd("nnoremap q <Nop>")

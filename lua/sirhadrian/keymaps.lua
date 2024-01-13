@@ -8,11 +8,13 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.cmd("nmap <unique> <c-r> <Plug>NetrwRefresh")
+
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts) -- left window
-keymap("n", "<C-k>", "<C-w>k", opts) -- up window
-keymap("n", "<C-j>", "<C-w>j", opts) -- down window
-keymap("n", "<C-l>", "<C-w>l", opts) -- right window
+keymap("n", "<C-h>", "<C-w><C-h>", opts) -- left window
+keymap("n", "<C-j>", "<C-w><C-j>", opts) -- down window
+keymap("n", "<C-k>", "<C-w><C-k>", opts) -- up window
+keymap("n", "<C-l>", "<C-w><C-l>", opts) -- right window
 
 -- Resize with arrows when using multiple windows
 keymap("n", "<C-Up>", "<cmd>resize -2<cr>", opts)
