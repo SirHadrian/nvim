@@ -9,6 +9,9 @@ vim.cmd("inoremap <C-l> <Right>")
 -- vim.cmd("nnoremap <C-k> <C-w><C-k>")
 -- vim.cmd("nnoremap <C-l> <C-w><C-l>")
 
+vim.cmd("match ErrorMsg '\\s\\+$'") -- highlight trailing whitespaces
+vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e") -- remove trailing whitespaces
+
 vim.cmd("nnoremap Q q")
 vim.cmd("nnoremap q <Nop>")
 
