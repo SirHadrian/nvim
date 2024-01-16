@@ -8,7 +8,7 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.cmd("nmap <unique> <c-r> <Plug>NetrwRefresh")
+vim.cmd("nmap <unique> <c-;> <Plug>NetrwRefresh")
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w><C-h>", opts) -- left window
