@@ -1,6 +1,6 @@
 local highlight = {
-    "CursorColumn",
-    "Whitespace",
+        "CursorColumn",
+        "Whitespace",
 }
 
 require("ibl").setup()
