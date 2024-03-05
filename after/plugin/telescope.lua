@@ -1,3 +1,4 @@
+local actions = require("telescope.actions")
 require("telescope").setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
