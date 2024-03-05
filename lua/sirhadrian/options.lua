@@ -29,8 +29,6 @@ local options = {
 	listchars = { tab = "» ", trail = "·", nbsp = "␣" },
 	-- Preview substitutions live, as you type!
 	inccommand = "split",
-	-- Show which line your cursor is on
-	cursorline = true,
 	-- Minimal number of screen lines to keep above and below the cursor.
 	scrolloff = 10,
 	-- Set highlight on search
@@ -65,6 +63,9 @@ local options = {
 	encoding = "utf-8",
 	spell = true,
 	shell = "/usr/bin/fish",
+	-- Show which line your cursor is on
+	cursorline = true,
+        -- Vertical column
 	colorcolumn = "80",
 }
 
