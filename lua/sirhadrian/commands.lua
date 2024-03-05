@@ -49,11 +49,11 @@ tnoremap <Leader>t <C-\><C-n>:call Term_toggle(100)<cr>
 ]])
 
 
-        function Transparent()
-                vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-                vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-                vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
-                vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
-                vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
-        end
-        Transparent()
+function Transparent()
+        vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+        vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
+        vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+end
+Transparent()
