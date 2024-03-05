@@ -1,88 +1,55 @@
-local opts = { noremap = true, silent = true }
-
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.cmd("nmap <unique> <c-;> <Plug>NetrwRefresh")
 
--- Better window navigation
-keymap("n", "<C-h>", "<C-w><C-h>", opts) -- left window
-keymap("n", "<C-j>", "<C-w><C-j>", opts) -- down window
-keymap("n", "<C-k>", "<C-w><C-k>", opts) -- up window
-keymap("n", "<C-l>", "<C-w><C-l>", opts) -- right window
+-- window navigation
+map("n", "<C-h>", "<C-w><C-h>") -- left window
+map("n", "<C-j>", "<C-w><C-j>") -- down window
+map("n", "<C-k>", "<C-w><C-k>") -- up window
+map("n", "<C-l>", "<C-w><C-l>") -- right window
 
--- Resize with arrows when using multiple windows
-keymap("n", "<C-Up>", "<cmd>resize -2<cr>", opts)
-keymap("n", "<C-down>", "<cmd>resize +2<cr>", opts)
-keymap("n", "<C-right>", "<cmd>vertical resize -2<cr>", opts)
-keymap("n", "<C-left>", "<cmd>vertical resize +2<cr>", opts)
+-- Resize windows with arrows keys
+map("n", "<C-Up>", "<cmd>resize -2<cr>")
+map("n", "<C-down>", "<cmd>resize +2<cr>")
+map("n", "<C-right>", "<cmd>vertical resize -2<cr>")
+map("n", "<C-left>", "<cmd>vertical resize +2<cr>")
 
---keymap.set("n", "<leader>e", vim.cmd.Ex)
---keymap("n", "<leader>w", "<cmd>w<cr>", opts)
---keymap("n", "<leader>q", "<cmd>qa<cr>", opts)
---keymap("n", "<leader>e", "<cmd>Neotree toggle<cr>", opts)
+map("n", "<leader>e", vim.cmd.Ex) -- Vim Ex explorer
+map("n", "<leader>w", "<cmd>w<cr>") -- Save buffer
+map("n", "<leader>q", "<cmd>qa!<cr>") -- Quit all buffers without saving
+map("n", "<leader>k", "<cmd>bdelete<cr>") -- Kill current buffer
+map("n", "<leader>p", "<cmd>Lazy<cr>") -- Open plugin manager
+map("n", "<leader>h", "<cmd>Alpha<cr>") -- Dashboard
 
 -- Buffer navigation
-keymap("n", "<M-k>", "<cmd>bprevious<cr>", opts)
-keymap("n", "<M-j>", "<cmd>bnext<cr>", opts)
+map("n", "<M-k>", "<cmd>bprevious<cr>")
+map("n", "<M-j>", "<cmd>bnext<cr>")
 
 -- Exit insert mode
-keymap("i", "jj", "<Esc>", opts)
-keymap("i", "kj", "<Esc>", opts)
-keymap("i", "jk", "<Esc>", opts)
-keymap("i", "kk", "<Esc>", opts)
+map("i", "jj", "<Esc>")
+map("i", "kj", "<Esc>")
+map("i", "jk", "<Esc>")
+map("i", "kk", "<Esc>")
 
--- Navigate insert mode
--- keymap("i", "C-l", "<Right>", opts)
--- keymap("i", "C-h", "<Left>", opts)
--- keymap("i", "C-j", "<Down>", opts)
--- keymap("i", "C-k", "<Up>", opts)
-
--- Normal mode
 -- Move lines up and down
-keymap("n", "<C-[>", "<cmd>m .+1<cr>==", opts)
-keymap("n", "<C-]>", "<cmd>m .-2<cr>==", opts)
-
--- -- Visual mode
--- keymap("v", "<C-[>", "<cmd>m '>+1<cr>gv=gv", opts)
--- keymap("v", "<C-]>", "<cmd>m '<-2<cr>gv=gv", opts)
+map("n", "<C-[>", "<cmd>m .+1<cr>==")
+map("n", "<C-]>", "<cmd>m .-2<cr>==")
 
 -- Keep cursor in the middle
-keymap("n", "<C-d>", "<C-d>zz", opts)
-keymap("n", "<C-u>", "<C-u>zz", opts)
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
 
 -- Keep search terms in the middle
-keymap("n", "n", "nzzzv", opts)
-keymap("n", "N", "Nzzzv", opts)
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
 
 -- Replace current word in file
-keymap("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- keymap("v", "<C-,>", "<gv", opts)
--- keymap("v", "<C-.>", ">gv", opts)
-
--- keymap("v", "<C-j>", "<cmd>m +1<cr>", opts)
--- keymap("v", "<C-k>", "<cmd>m -2<cr>", opts)
-
---keymap("n", "<leader>h", ":Alpha<cr>", opts)
---keymap("n", "<leader>c", ":bdelete<cr>", opts)
-
--- Window split
---keymap("n", "<S-v>", ":vsplit<cr>", opts)
---keymap("n", "<S-h>", ":split<cr>", opts)
---keymap("n", "<S-q>", ":on<cr>", opts)
-
--- Telescope
---keymap('n', '<leader>ff', ":Telescope find_files<cr>", opts)
---keymap('n', '<leader>gf', ":Telescope git_files<cr>", opts)
---keymap('n', '<leader>gg', ":Telescope live_grep<cr>", opts)
---keymap('n', '<leader>fb', ":Telescope buffers<cr>", opts)
---keymap('n', '<leader>fh', ":Telescope help_tags<cr>", opts)
-
-keymap("n", "<C-=>", "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1.25<cr>", opts)
-keymap("n", "<C-->", "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1 / 1.25<cr>", opts)
+-- Nvim zoom
+map("n", "<C-=>", "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1.25<cr>")
+map("n", "<C-->", "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1 / 1.25<cr>")

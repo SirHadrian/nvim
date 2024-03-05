@@ -1,190 +1,180 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-        vim.fn.system({
-                "git",
-                "clone",
-                "--filter=blob:none",
-                "https://github.com/folke/lazy.nvim.git",
-                "--branch=stable", -- latest stable release
-                lazypath,
-        })
-end
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"--branch=stable", -- latest stable release
+		lazyrepo,
+		lazypath,
+	})
+end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
 require("lazy").setup({
 
-        {
-                "williamboman/mason.nvim",
-                lazy = false,
-                config = function()
-                        require("mason").setup()
-                end
-        },
+	-- Use `opts = {}` to force a plugin to be loaded.
+	--  This is equivalent to:
+	--    require('Comment').setup({})
 
-        {
-                'williamboman/mason-lspconfig.nvim',
-                lazy = false,
-                config = function()
-                        require("mason-lspconfig").setup()
-                end
-        },
+	{ -- Fuzzy Finder (files, lsp, etc)
+		"nvim-telescope/telescope.nvim",
+		event = "VimEnter",
+		branch = "0.1.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{ -- If encountering errors, see telescope-fzf-native README for install instructions
+				"nvim-telescope/telescope-fzf-native.nvim",
 
-        -- Themes
-        {
-                "folke/tokyonight.nvim",
-                lazy = false,    -- make sure we load this during startup if it is your main colorscheme
-                priority = 1000, -- make sure to load this before all the other start plugins
-        },
+				-- `build` is used to run some command when the plugin is installed/updated.
+				-- This is only run then, not every time Neovim starts up.
+				build = "make",
 
-        {
-                "ellisonleao/gruvbox.nvim",
-                lazy = true, -- make sure we load this during startup if it is your main colorscheme
-                --priority = 1000
-        },
+				-- `cond` is a condition used to determine whether this plugin should be
+				-- installed and loaded.
+				cond = function()
+					return vim.fn.executable("make") == 1
+				end,
+			},
+			{ "nvim-telescope/telescope-ui-select.nvim" },
 
-        {
-                'rose-pine/neovim',
-                lazy = true,
-                name = 'rose-pine'
-        },
+			-- Useful for getting pretty icons, but requires special font.
+			--  If you already have a Nerd Font, or terminal set up with fallback fonts
+			--  you can enable this
+			{ "nvim-tree/nvim-web-devicons" },
+		},
+	},
 
-        {
-                -- Which-key Extension
-                "folke/which-key.nvim",
-                lazy = false,
-        },
+	{ -- LSP Configuration & Plugins
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			-- Automatically install LSPs and related tools to stdpath for neovim
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
 
-        -- Bufferline
-        {
-                'akinsho/bufferline.nvim',
-                lazy = false,
-                enabled = false,
-                version = "*",
-                dependencies = 'nvim-tree/nvim-web-devicons'
-        },
+			-- Useful status updates for LSP.
+			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+			{ "j-hui/fidget.nvim", opts = {} },
+		},
+	},
 
-        {
-                "nvim-neo-tree/neo-tree.nvim",
-                lazy = false,
-                enabled = false,
-                branch = "v3.x",
-                dependencies = {
-                        "nvim-lua/plenary.nvim",
-                        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-                        "MunifTanjim/nui.nvim",
-                }
-        },
+	{ -- Autocompletion
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		dependencies = {
+			-- Snippet Engine & its associated nvim-cmp source
+			{
+				"L3MON4D3/LuaSnip",
+				build = (function()
+					-- Build Step is needed for regex support in snippets
+					-- This step is not supported in many windows environments
+					-- Remove the below condition to re-enable on windows
+					if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
+						return
+					end
+					return "make install_jsregexp"
+				end)(),
+			},
+			"saadparwaiz1/cmp_luasnip",
 
-        -- Lualine
-        {
-                'nvim-lualine/lualine.nvim',
-                lazy = false,
-                dependencies = { 'nvim-tree/nvim-web-devicons' }
-        },
+			-- Adds other completion capabilities.
+			--  nvim-cmp does not ship with all sources by default. They are split
+			--  into multiple repos for maintenance purposes.
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-path",
 
-        -- Alpha (Dashboard)
-        {
-                'goolord/alpha-nvim',
-                lazy = false,
-                config = function()
-                        require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
-                end
-        },
+			-- If you want to add a bunch of pre-configured snippets,
+			--    you can use this plugin to help you. It even has snippets
+			--    for various frameworks/libraries/etc. but you will have to
+			--    set up the ones that are useful for you.
+			-- 'rafamadriz/friendly-snippets',
+		},
+	},
 
-        -- Telescope (Fuzzy Finder)
-        -- Added these plugins to install Telescope
-        {
-                'nvim-telescope/telescope.nvim',
-                lazy = true,
-                dependencies = {
-                        { 'nvim-lua/plenary.nvim' },
-                }
-        },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		build = ":TSUpdate",
+	},
 
-        {
-                "nvim-treesitter/nvim-treesitter",
-                build = ":TSUpdate"
-        },
+	-- Lualine
+	{
+		"nvim-lualine/lualine.nvim",
+		lazy = false,
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 
-        {
-                'VonHeikemen/lsp-zero.nvim',
-                lazy = false,
-                branch = 'v2.x',
-                dependencies = {
-                        -- LSP Support
-                        { 'neovim/nvim-lspconfig' },             -- Required
-                        { 'williamboman/mason.nvim' },           -- Optional
-                        { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-                        -- Autocompletion
-                        { 'hrsh7th/nvim-cmp' },     -- Required
-                        { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-                        { 'L3MON4D3/LuaSnip' },     -- Required
-                }
-        },
+	-- Alpha (Dashboard)
+	{
+		"goolord/alpha-nvim",
+		lazy = false,
+		config = function()
+			require("alpha").setup(require("alpha.themes.dashboard").config)
+		end,
+	},
 
-        {
-                'windwp/nvim-autopairs',
-                event = "InsertEnter",
-                opts = {} -- this is equalent to setup({}) function
-        },
+	{
+		"windwp/nvim-autopairs",
+		lazy = false,
+		event = "InsertEnter",
+		opts = {}, -- this is equalent to setup({}) function
+	},
 
-        {
-                'akinsho/toggleterm.nvim',
-                lazy = true,
-                enabled = false,
-                version = "*",
-                config = true
-        },
+	{
+		"numToStr/Comment.nvim",
+		lazy = false,
+		opts = {},
+	},
 
-        {
-                'numToStr/Comment.nvim',
-                opts = {
-                        -- add any options here
-                },
-                lazy = false,
-        },
+	{
+		"lewis6991/gitsigns.nvim",
+		lazy = false,
+		opts = {
+			signs = {
+				add = { text = "+" },
+				change = { text = "~" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+			},
+		},
+	},
 
-        -- Git
-        {
-                "airblade/vim-gitgutter",
-        },
+	{
+		"ggandor/leap.nvim",
+		lazy = false,
+	},
 
-        {
-                "simrat39/rust-tools.nvim", -- add lsp plugin
-                {
-                        "williamboman/mason-lspconfig.nvim",
-                        opts = {
-                                ensure_installed = { "rust_analyzer" },
-                        },
-                },
-        },
+	{
+		"ellisonleao/gruvbox.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000,
+	},
 
-        {
-                "ggandor/leap.nvim",
-                lazy = false,
-        },
+	{
+		"folke/tokyonight.nvim",
+		lazy = true, -- make sure we load this during startup if it is your main colorscheme
+	},
 
-        {
-                "mbbill/undotree",
-                lazy = false,
-                enabled = false,
-        },
+	{
+		"rose-pine/neovim",
+		lazy = true,
+		name = "rose-pine",
+	},
 
-        {
-                "lukas-reineke/indent-blankline.nvim",
-                main = "ibl",
-                opts = {}
-        },
+	{
+		"folke/todo-comments.nvim",
+		lazy = false,
+		event = "VimEnter",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = { signs = false },
+	},
 
-        {
-                'stevearc/aerial.nvim',
-                opts = {},
-                -- Optional dependencies
-                dependencies = {
-                        "nvim-treesitter/nvim-treesitter",
-                        "nvim-tree/nvim-web-devicons"
-                },
-        }
-
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		lazy = false,
+		main = "ibl",
+	},
 })

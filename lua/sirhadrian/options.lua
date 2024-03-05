@@ -1,40 +1,76 @@
-local opt = vim.opt
-
-opt.backspace = "indent,eol,start"
-opt.history = 1000
-opt.number = true -- Line numbers
-opt.relativenumber = true
-opt.mouse = ""    -- Disable mouse
---opt.guicursor=""
-opt.autoindent = true
-opt.clipboard = "unnamedplus" -- Sync with system clipboard
-opt.cursorline = true         -- Enable highlighting of the current line
-opt.showmode = false          -- Dont show mode since we have a statusline
-opt.shiftround = true         -- Round indent
-opt.smartindent = true        -- Insert indents automatically
-opt.spelllang = { "en" }
-opt.splitbelow = true         -- Put new windows below current
-opt.splitright = true         -- Put new windows right of current
-opt.tabstop = 8               -- Number of spaces tabs count for
-opt.shiftwidth = 8            -- Size of an indent
-opt.expandtab = true          -- Use spaces instead of tabs
-opt.termguicolors = true      -- True color support
-opt.guifont = "CaskaydiaCove Nerd Font:h9"
--- opt.guifont = "CaskaydiaCove Nerd Font Mono:h9"
-opt.scrolloff = 10
-opt.hidden = true
-opt.cino="t0" -- do not indent c function types
-opt.foldmethod = "indent"
-opt.foldenable = false -- disable folds when buffer is opened
-opt.pumheight = 20 -- max number of items to show in popup menu
-opt.hlsearch = false
-opt.incsearch = true
-opt.ignorecase= true
-opt.updatetime = 50
-opt.encoding = "utf-8"
-opt.spell = true
-opt.shell = "/usr/bin/fish"
-opt.undofile = true
+local options = {
+	-- Make line numbers default
+	number = true,
+	relativenumber = true,
+	history = 1000,
+	-- Disable mouse
+	mouse = "",
+	--opt.guicursor=""
+	autoindent = true,
+	-- Sync clipboard between OS and Neovim.
+	clipboard = "unnamedplus",
+	-- Enable break indent
+	breakindent = true,
+	-- Save undo history
+	undofile = true,
+	-- Case-insensitive searching UNLESS \C or capital in search
+	ignorecase = true,
+	smartcase = true,
+	-- Keep signcolumn on by default
+	signcolumn = "yes",
+	-- Decrease update time
+	updatetime = 250,
+	timeoutlen = 300,
+	-- Configure how new splits should be opened
+	splitbelow = true, -- Put new windows below current
+	splitright = true, -- Put new windows right of current
+	-- Sets how neovim will display certain whitespace in the editor.
+	list = true,
+	listchars = { tab = "» ", trail = "·", nbsp = "␣" },
+	-- Preview substitutions live, as you type!
+	inccommand = "split",
+	-- Show which line your cursor is on
+	cursorline = true,
+	-- Minimal number of screen lines to keep above and below the cursor.
+	scrolloff = 10,
+	-- Set highlight on search
+	hlsearch = false,
+	backspace = "indent,eol,start",
+	-- Dont show mode since we have a statusline
+	showmode = false,
+	-- Round indent
+	shiftround = true,
+	-- Insert indents automatically
+	smartindent = true,
+	spelllang = { "en" },
+	-- Number of spaces tabs count for
+	tabstop = 8,
+	-- Size of an indent
+	shiftwidth = 8,
+	-- Use spaces instead of tabs
+	expandtab = true,
+	-- True color support
+	termguicolors = true,
+	guifont = "CaskaydiaCove Nerd Font:h9",
+	-- guifont = "CaskaydiaCove Nerd Font Mono:h9",
+	hidden = true,
+	-- do not indent c function types
+	cino = "t0",
+	foldmethod = "indent",
+	-- disable folds when buffer is opened
+	foldenable = false,
+	-- max number of items to show in popup menu
+	pumheight = 20,
+	incsearch = true,
+	encoding = "utf-8",
+	spell = true,
+	shell = "/usr/bin/fish",
+	colorcolumn = "80",
+}
 
 vim.g.neovide_transparency = 0.0
 vim.g.neovide_scale_factor = 1.0
+
+for option, value in pairs(options) do
+	vim.opt[option] = value
+end
