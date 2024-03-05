@@ -8,11 +8,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         end,
 })
 
-vim.cmd("inoremap <C-h> <Left>")
-vim.cmd("inoremap <C-j> <Down>")
-vim.cmd("inoremap <C-k> <Up>")
-vim.cmd("inoremap <C-l> <Right>")
-
 vim.cmd("match ErrorMsg '\\s\\+$'") -- highlight trailing whitespaces
 vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e") -- remove trailing whitespaces
 

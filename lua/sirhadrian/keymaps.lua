@@ -35,6 +35,12 @@ map("i", "kj", "<Esc>")
 map("i", "jk", "<Esc>")
 map("i", "kk", "<Esc>")
 
+-- Move while in insert mode
+map("i", "<C-h>", "<Left>")
+map("i", "<C-j>", "<Down>")
+map("i", "<C-k>", "<Up>")
+map("i", "<C-l>", "<Right>")
+
 -- Move lines up and down
 map("n", "<C-[>", "<cmd>m .+1<cr>==")
 map("n", "<C-]>", "<cmd>m .-2<cr>==")
