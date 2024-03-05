@@ -1,19 +1,10 @@
 vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
         callback = function(event)
-                -- NOTE: Remember that lua is a real programming language, and as such it is possible
-                -- to define small helper and utility functions so you don't have to repeat yourself
-                -- many times.
-                --
-                -- In this case, we create a function that lets us more easily define mappings specific
-                -- for LSP related items. It sets the mode, buffer and description for us each time.
                 local map = function(keys, func, desc)
                         vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
                 end
 
-                -- Jump to the definition of the word under your cursor.
-                --  This is where a variable was first declared, or where a function is defined, etc.
-                --  To jump back, press <C-T>.
                 map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 
                 -- Find references for the word under your cursor.
@@ -136,7 +127,16 @@ local servers = {
 --    :Mason
 --
 --  You can press `g?` for help in this menu
-require("mason").setup()
+require("mason").setup({
+        ui = {
+                icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗",
+                },
+        },
+
+})
 
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
