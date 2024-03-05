@@ -139,7 +139,7 @@ require("lazy").setup({
                                 change = { text = "~" },
                                 delete = { text = "_" },
                                 topdelete = { text = "‾" },
-                        changedelete = { text = "~" },
+                                changedelete = { text = "~" },
                         },
                 },
         },
@@ -147,6 +147,9 @@ require("lazy").setup({
         {
                 "ggandor/leap.nvim",
                 lazy = false,
+                config = function()
+                        require('leap').add_default_mappings()
+                end,
         },
 
         {
