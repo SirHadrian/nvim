@@ -24,6 +24,7 @@ map("n", "<leader>q", "<cmd>qa!<cr>") -- Quit all buffers without saving
 map("n", "<leader>k", "<cmd>bdelete<cr>") -- Kill current buffer
 map("n", "<leader>p", "<cmd>Lazy<cr>") -- Open plugin manager
 map("n", "<leader>h", "<cmd>Alpha<cr>") -- Dashboard
+map("n", "<leader>m", "<cmd>Mason<cr>") -- Open Mason
 
 -- Buffer navigation
 map("n", "<M-k>", "<cmd>bprevious<cr>")

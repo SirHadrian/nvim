@@ -181,4 +181,12 @@ require("lazy").setup({
                 dependencies = { "nvim-lua/plenary.nvim" },
         },
 
+        -- {
+        --         'mrcjkb/rustaceanvim',
+        --         version = '^4', -- Recommended
+        --         ft = { 'rust' },
+        -- },
+
+        { "tikhomirov/vim-glsl" },
+
 })
