@@ -189,4 +189,10 @@ require("lazy").setup({
 
         { "tikhomirov/vim-glsl" },
 
+        {
+                'NvChad/nvim-colorizer.lua',
+                lazy = false,
+                opts = {}
+        },
+
 })
