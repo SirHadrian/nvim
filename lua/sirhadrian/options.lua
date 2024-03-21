@@ -58,7 +58,7 @@ local options = {
         -- disable folds when buffer is opened
         foldenable = false,
         -- max number of items to show in popup menu
-        pumheight = 20,
+        pumheight = 10,
         incsearch = true,
         encoding = "utf-8",
         spell = true,
