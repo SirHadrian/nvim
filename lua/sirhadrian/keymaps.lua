@@ -64,3 +64,6 @@ map("n", "<C-->", "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_fac
 
 -- Lazygit
 map("n", "<leader>g", "<cmd>LazyGit<cr>", opts)
+
+-- Make transparent
+map("n", "<leader>t", "<cmd>lua Transparent()<cr>", opts)
