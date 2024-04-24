@@ -49,8 +49,7 @@ local options = {
         expandtab = true,
         -- True color support
         termguicolors = true,
-        guifont = "CaskaydiaCove Nerd Font:h9",
-        -- guifont = "CaskaydiaCove Nerd Font Mono:h9",
+        guifont = "CaskaydiaCove Nerd Font Mono:h9",
         hidden = true,
         -- do not indent c function types
         cino = "t0",
@@ -69,7 +68,7 @@ local options = {
         colorcolumn = "80",
 }
 
-vim.g.neovide_transparency = 0.0
+vim.g.neovide_transparency = 1.0
 vim.g.neovide_scale_factor = 1.0
 
 for option, value in pairs(options) do

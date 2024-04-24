@@ -58,9 +58,12 @@ map("n", "N", "Nzzzv", opts)
 -- Replace current word in file
 map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
--- Nvim zoom
+-- Neovide zoom
 map("n", "<C-=>", "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1.25<cr>", opts)
 map("n", "<C-->", "<cmd>lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1 / 1.25<cr>", opts)
+-- Neovide transparency
+map("n", "<C-]>", "<cmd>lua vim.g.neovide_transparency = vim.g.neovide_transparency * 1.25<cr>", opts)
+map("n", "<C-[>", "<cmd>lua vim.g.neovide_transparency = vim.g.neovide_transparency * 1 / 1.25<cr>", opts)
 
 -- Lazygit
 map("n", "<leader>g", "<cmd>LazyGit<cr>", opts)
