@@ -37,6 +37,9 @@ map("i", "kj", "<Esc>", opts)
 map("i", "jk", "<Esc>", opts)
 map("i", "kk", "<Esc>", opts)
 
+-- Exit terminal mode
+map('t', '<Esc>', '<C-\\><C-n>', opts)
+
 -- Move while in insert mode
 map("i", "<C-h>", "<Left>", opts)
 map("i", "<C-j>", "<Down>", opts)
