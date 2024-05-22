@@ -37,8 +37,11 @@ map("i", "kj", "<Esc>", opts)
 map("i", "jk", "<Esc>", opts)
 map("i", "kk", "<Esc>", opts)
 
--- Exit terminal mode
-map('t', '<Esc>', '<C-\\><C-n>', opts)
+-- Terminal mode
+map("t", "<Esc>", "<C-\\><C-n>", opts)
+map("n", "<leader>t", "<cmd>terminal<cr>", opts)
+map("t", "<M-j>", "<cmd>bprevious<cr>", opts)
+map("t", "<M-k>", "<cmd>bnext<cr>", opts)
 
 -- Move while in insert mode
 map("i", "<C-h>", "<Left>", opts)
@@ -72,4 +75,4 @@ map("n", "<C-[>", "<cmd>lua vim.g.neovide_transparency = vim.g.neovide_transpare
 map("n", "<leader>g", "<cmd>LazyGit<cr>", opts)
 
 -- Make transparent
-map("n", "<leader>t", "<cmd>lua Transparent()<cr>", opts)
+-- map("n", "<leader>t", "<cmd>lua Transparent()<cr>", opts)

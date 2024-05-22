@@ -8,7 +8,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         end,
 })
 
-vim.cmd("match ErrorMsg '\\s\\+$'") -- highlight trailing whitespaces
+-- Terminal autocomands
+vim.cmd("autocmd TermOpen,BufWinEnter,WinEnter term://* startinsert")
+
+-- vim.cmd("match ErrorMsg '\\s\\+$'") -- highlight trailing whitespaces
 vim.cmd("autocmd BufWritePre * :%s/\\s\\+$//e") -- remove trailing whitespaces
 
 vim.cmd("nnoremap Q q")
