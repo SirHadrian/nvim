@@ -75,4 +75,4 @@ map("n", "<C-[>", "<cmd>lua vim.g.neovide_transparency = vim.g.neovide_transpare
 map("n", "<leader>g", "<cmd>LazyGit<cr>", opts)
 
 -- Make transparent
--- map("n", "<leader>t", "<cmd>lua Transparent()<cr>", opts)
+map("n", "<M-t>", "<cmd>lua Transparent()<cr>", opts)
