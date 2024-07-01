@@ -71,6 +71,9 @@ local options = {
 vim.g.neovide_transparency = 1.0
 vim.g.neovide_scale_factor = 1.0
 
+-- Netrw line numbers
+vim.g.netrw_bufsettings = "noma nomod nu rnu nobl nowrap ro"
+
 for option, value in pairs(options) do
         vim.opt[option] = value
 end
